@@ -15,7 +15,7 @@ You should be able to:
 
 ### Links
 
-- Solution URL: [https://testimonials-slider-delta.vercel.app/](https://your-solution-url.com)
+- Solution URL: [Solution](https://testimonials-slider-delta.vercel.app/)
 
 ## My process
 
