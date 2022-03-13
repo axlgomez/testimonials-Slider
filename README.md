@@ -13,6 +13,10 @@ You should be able to:
 - View the optimal layout for the component depending on their device's screen size
 - Navigate the slider
 
+### Links
+
+- Solution URL: [https://testimonials-slider-delta.vercel.app/](https://your-solution-url.com)
+
 ## My process
 
 ### Built with
