@@ -1,0 +1,14 @@
+@use "../abstract/" as *;
+
+*
+{
+    font-family: $font-primary;
+    text-decoration: none;
+    outline: none; border: none;
+    transition: all .3s linear;
+}
+
+html
+{
+    font-size: $font-size;
+}

@@ -1,0 +1,210 @@
+@use "../base/" as *;
+@use "../abstract/" as *;
+
+.slides
+{
+    display: grid;
+}
+
+.testimonials
+{
+    @include position(relative);
+    grid-column: 1;
+    grid-row: 1;
+    opacity: 0;
+    transition: opacity .5s;
+
+    &.active
+    {
+        opacity: 1;
+        animation: headShake;
+        animation-duration: 2s;
+    }
+
+    @include break-point(tablet)
+    {
+        padding: 0 14%;
+    }
+
+    @include break-point(portatil)
+    {
+        @include flex(flex, $justify: center, $align: center);
+        margin: auto;
+        height: 80vh;
+        padding: 0 9%;
+    }
+}
+
+.testimonial
+{
+    margin: auto;
+    @include flex(flex, $direction: column, $justify: center, $align: center);
+    order: 2;
+    @include position(relative);
+
+    &__img1
+    {
+        width: 320px;
+        margin-top: 1rem;
+
+        @include break-point(portatil)
+        {
+            margin-top: 2.3rem;
+            min-width: 520px;
+        }
+    }
+
+    &__img2
+    {
+        width: 250px;
+        @include position(absolute, $top: 2.8rem);
+        border-radius: .3rem;
+        z-index: 0;
+
+        @include break-point(portatil)
+        {
+            width: 405px;
+            @include position(absolute, $top: 5rem);
+        }
+    }
+
+    &__prev
+    { 
+        @include position(absolute, $bottom: 1%);
+        transform: translateX(-2.6rem);
+        z-index: 1;
+        cursor: pointer;
+        color: $dark-blue;
+        width: auto;
+        background: darken($color: white, $amount: 0%);
+        padding: .3rem 1rem;
+        font-size: 1.3rem;
+        border-top-left-radius: 1.2rem;
+        border-bottom-left-radius: 1.2rem;
+        box-shadow: -5px 3px 50px rgba($color: $dark-blue, $alpha: .5);
+
+        transition: .6s ease;
+        user-select: none;
+
+        &:hover
+        {
+            background: darken($color: white, $amount: 10%);
+        }
+
+        @include break-point(portatil)
+        {
+            @include position(absolute, $bottom: 4%);
+            transform: translateX(-9rem);
+        }
+    }
+    &__next
+    {
+        @include position(absolute, $bottom: 1%);
+        transform: translateX(0rem);
+        z-index: 1;
+        cursor: pointer;
+        color: $dark-blue;
+        width: auto;
+        background: darken($color: white, $amount: 0%);
+        padding: .3rem 1rem;
+        font-size: 1.3rem;
+        border-top-right-radius: 1.2rem;
+        border-bottom-right-radius: 1.2rem;
+        box-shadow: 32px 3px 50px rgba($color: $dark-blue, $alpha: .5);
+        transition: .6s ease;
+        user-select: none;
+
+        &:hover
+        {
+            background: darken($color: white, $amount: 10%);
+        }
+
+        @include break-point(portatil)
+        {
+            @include position(absolute, $bottom: 4%);
+            transform: translate(-6.4rem);
+        }
+    }
+}
+
+.review
+{
+    margin: 1.5rem auto 0;
+    @include flex(flex, $justify: center, $align: center, $direction: column);
+    padding: 0 9%;
+    background: url(/images/pattern-quotes.svg)center;
+    background-repeat: no-repeat;
+    background-position-y: top;
+    background-size: 60px;
+
+    @include break-point(portatil)
+    {
+        margin: auto;
+        padding: 0;
+        background-position-x: 30%; 
+        background-position-y: 22%;
+        background-size: 90px;
+    }
+
+    &__text
+    {
+        transform: translateY(1.5em);
+        text-align: center;
+        color: rgba($color: $dark-blue, $alpha: .8);
+
+        @include break-point(portatil)
+        {
+            transform: translateY(3em);
+            font-size: 1.5rem;
+            font-weight: map-get($weights, light);
+            color: $dark-blue;
+            text-align: start;
+            width: 580px;
+            padding-left: 4rem ;
+        }
+    }
+
+    &__name
+    {
+        color: $dark-blue;
+
+        @include break-point(portatil)
+        {
+            @include position(absolute, $bottom: 2rem);
+            transform: translateX(-10rem);
+        }
+    }
+
+    &__job
+    {
+        transform: translateY( -1rem);
+        font-size: 14px;
+        color: $grayish-blue;
+        text-align: center;
+
+        @include break-point(portatil)
+        {
+            @include position(absolute, $bottom: 3.4rem);
+            transform: translateX(-4rem);
+
+            &-2
+            {
+                transform: translateX(-1rem);
+            }
+        }
+    }
+}
+
+.bg-curve
+{
+
+    @include break-point(portatil)
+    {
+        width: 515px;
+    }
+}
+
+
+
+
+
